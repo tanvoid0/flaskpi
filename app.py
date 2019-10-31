@@ -3,8 +3,8 @@ from flask import Flask, request, jsonify, Response, render_template
 import pandas as pd
 import requests
 import numpy as np
+
 app = Flask(__name__)
-app.debug = True
 
 def soilTest(value):
     if value == 0:
@@ -15,6 +15,10 @@ def soilTest(value):
         return 'Very Wet'
     else:
         return ''
+
+@app.route('/')
+def home():
+    return "<h1>Welcome</h1>"
 
 @app.route('/plunk')
 def datamine():
@@ -59,4 +63,4 @@ def datamine():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
