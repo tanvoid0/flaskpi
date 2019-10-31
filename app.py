@@ -18,9 +18,9 @@ def soilTest(value):
 
 @app.route('/')
 def home():
-    return "<h1>Welcome</h1>"
+    return "<h1>Welcome to our server !!</h1>"
 
-@app.route('/plunk')
+@app.route('/api')
 def datamine():
     # url = "http://djangpi.herokuapp.com/api/datalogs/"
     url = request.args.get('url')
@@ -63,4 +63,4 @@ def datamine():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(threaded=True, port=5000)
