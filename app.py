@@ -6,6 +6,7 @@ import numpy as np
 
 app = Flask(__name__)
 
+
 def soilTest(value):
     if value == 0:
         return 'Dry'
@@ -16,9 +17,11 @@ def soilTest(value):
     else:
         return ''
 
+
 @app.route('/')
 def home():
     return "<h1>Welcome to our server !!</h1>"
+
 
 @app.route('/api')
 def datamine():
